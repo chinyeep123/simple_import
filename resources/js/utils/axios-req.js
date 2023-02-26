@@ -88,6 +88,7 @@ service.interceptors.response.use(
         if (loadingInstance) {
             loadingInstance && loadingInstance.close();
         }
+        console.log(err);
         ElMessage.error({
             message: err,
             duration: 2 * 1000,
@@ -95,10 +96,10 @@ service.interceptors.response.use(
         return Promise.reject(err);
     }
 );
-
+//导出service实例给页面调用 , config->页面的配置
 export default function axiosReq(config) {
     return service({
-        baseURL: "https://github.jzfai.top/micro-service-api",
+        baseURL: "http://vapi.youlai.tech",
         // baseURL: import.meta.env.VITE_APP_BASE_URL,
         timeout: 8000,
         ...config,

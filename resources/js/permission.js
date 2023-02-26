@@ -5,7 +5,6 @@ import {
     progressStart,
 } from "@/hooks/use-permission";
 import { useBasicStore } from "@/store/auth";
-import { userInfoReq } from "@/api/auth/user";
 import { langTitle } from "@/hooks/use-common";
 
 //路由进入前拦截
@@ -16,16 +15,24 @@ router.beforeEach(async (to) => {
     document.title = langTitle(to.meta?.title); // i18 page title
     const basicStore = useBasicStore();
     //1.判断token
-    if (basicStore.token) {
+    // if (basicStore.token) {
+    if (basicStore.isLogin) {
         if (to.path === "/login") {
             return "/";
         } else {
             //2.判断是否获取用户信息
             if (!basicStore.getUserInfo) {
                 try {
-                    const userData = await userInfoReq();
+                    const userData = {
+                        roles: "admin",
+                        code: "aa",
+                        userInfo: {
+                            username: "admin",
+                            avatar: "",
+                        },
+                    };
                     //3.动态路由权限筛选
-                    filterAsyncRouter(userData);
+                    // filterAsyncRouter(userData);
                     //4.保存用户信息到store
                     basicStore.setUserInfo(userData);
                     //5.再次执行路由跳转

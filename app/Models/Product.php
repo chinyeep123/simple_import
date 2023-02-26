@@ -89,7 +89,7 @@ class Product extends Model
     /**
      * Get relationship belongsTo.
      */
-    public function brand()
+    public function typeBrand()
     {
         return $this->belongsTo(TypeBrand::class);
     }
@@ -97,9 +97,17 @@ class Product extends Model
     /**
      * Get relationship belongsTo.
      */
-    public function model()
+    public function brandModel()
     {
         return $this->belongsTo(BrandModel::class);
+    }
+
+    /**
+     * Get relationship belongsTo.
+     */
+    public function modelCapacity()
+    {
+        return $this->belongsTo(ModelCapacity::class);
     }
 
     /**

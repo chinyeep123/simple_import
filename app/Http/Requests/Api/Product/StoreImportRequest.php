@@ -24,7 +24,7 @@ class StoreImportRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'file' => 'required|mimes:xlsx,xls,XLSX,XLS'
         ];
     }
 }

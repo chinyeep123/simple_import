@@ -8,6 +8,6 @@ class Common
 {
     public static function replaceEmptySpace(string $string)
     {
-        return Str::replace(' ', '-', $string);
+        return Str::replace(' ', '-', Str::lower($string));
     }
 }

@@ -47,10 +47,10 @@
               prop="product_id"
             />
             <el-table-column
-              key="types"
+              key="type"
               label="Types"
               align="center"
-              prop="types"
+              prop="type"
             />
             <el-table-column
               key="brand"
@@ -172,6 +172,8 @@ import {
   UploadFilled
 } from '@element-plus/icons-vue';
 
+import Pagination from '@/components/Pagination/index.vue';
+
 const queryFormRef = ref(ElForm); 
 const dataFormRef = ref(ElForm); 
 const importFormRef = ref(ElForm); 
@@ -231,11 +233,11 @@ const {
  */
 function handleQuery() {
   state.loading = true;
-  // listProducts(state.queryParams).then(({ data }) => {
-  //   state.productList = data.list;
-  //   state.total = data.total;
+  listProducts(state.queryParams).then(({ data }) => {
+    state.productList = data.data;
+    state.total = data.meta.total;
     state.loading = false;
-  // });
+  });
 }
 
 function handleSelectionChange(selection: any) {
@@ -319,3 +321,9 @@ onMounted(() => {
   handleQuery();
 });
 </script>
+
+<style lang="scss">
+html.base-theme .el-button + .el-button {
+  margin-left: 0;
+}
+</style>

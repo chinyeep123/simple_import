@@ -1,14 +1,11 @@
 import { createWebHistory, createRouter } from "vue-router";
 // import store from "@/store";
 import NProgress from "nprogress"; // progress bar
-import Layout from "@/layout/index.vue";
 /* Guest Component */
 import Auth from "./modules/auth";
 /* Module Component */
 import Error from "./modules/error";
-import Billings from "./modules/billings";
 import Dashboard from "./modules/dashboard";
-import Settings from "./modules/settings";
 
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
 
@@ -26,9 +23,7 @@ export const constantRoutes = [
     },
     ...Auth,
     ...Dashboard,
-    ...Billings,
     ...Error,
-    ...Settings,
 ];
 
 //角色和code数组动态路由

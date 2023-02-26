@@ -49,7 +49,7 @@ export default defineConfig({
     build: {
         chunkSizeWarningLimit: 1600,
         sourcemap: true,
-        outDir: "distp", //指定输出路径
+        outDir: "public/build", //指定输出路径
         assetsDir: "static/img/", // 指定生成静态资源的存放路径
         rollupOptions: {
             output: {

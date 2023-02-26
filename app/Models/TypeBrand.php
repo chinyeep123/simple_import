@@ -90,7 +90,7 @@ class TypeBrand extends Model
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = Str::lower(Common::replaceEmptySpace($model->name));
+            $model->slug = Common::replaceEmptySpace($model->name);
         });
     }
 

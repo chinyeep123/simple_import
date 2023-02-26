@@ -21,6 +21,8 @@ return new class extends Migration
             $table->foreign('type_brand_id')->references('id')->on('type_brands')->onDelete('cascade')->onUpdate('cascade');
             $table->bigInteger('brand_model_id')->unsigned()->nullable();
             $table->foreign('brand_model_id')->references('id')->on('brand_models')->onDelete('cascade')->onUpdate('cascade');
+            $table->bigInteger('model_capacity_id')->unsigned()->nullable();
+            $table->foreign('model_capacity_id')->references('id')->on('model_capacities')->onDelete('cascade')->onUpdate('cascade');
             $table->boolean('status')->default(true)->index();
             $table->timestamps();
         });

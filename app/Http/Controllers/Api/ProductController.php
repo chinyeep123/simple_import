@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\Product\StoreImportRequest;
+use App\Http\Resources\API\Product\CollectionResource;
+use App\Imports\ImportProduct;
+use App\Models\ProductDetail;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -15,24 +19,38 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('visitors.index');
+        $product = ProductDetail::with(['product.typeBrand', 'product.type', 'product.brandModel', 'product.modelCapacity'])->paginate(config('setting.limit'));
+
+        return new CollectionResource($product);
     }
 
     /**
      * Import resources.
      *
      * @param  StoreImportRequest  $request
-     * @param  Visitor  $visitor
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(StoreImportRequest $request)
+    public function storeImport(StoreImportRequest $request)
     {
-        $this->authorize('update', $visitor);
-        $validated = $request->validated();
+        Excel::import(new ImportProduct(), $request->file);
 
-        $visitor->update($validated);
+        return response()->json([
+            'success' => true,
+            'message' => 'Import success!'
+        ]);
+    }
 
-        return redirect()->route('visitors.index')->with('success', __('Visitor successfully updated'));
+    public function downloadTemplate()
+    {
+        $filename = 'product.xlsx';
+        // Get path from storage directory
+        $path = public_path('sample/' . $filename);
+
+        // Download file with custom headers
+        return response()->download($path, $filename, [
+            'Content-Type' => 'application/vnd.ms-excel',
+            'Content-Disposition' => 'inline; filename="' . $filename . '"'
+        ]);
     }
 }

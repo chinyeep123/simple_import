@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('product_id')->unsigned()->nullable();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('capacity')->nullable()->index();
             $table->integer('quantity')->default(0)->index();
             $table->boolean('status')->default(true)->index();
             $table->timestamps();

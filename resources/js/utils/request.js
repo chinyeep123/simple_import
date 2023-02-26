@@ -21,7 +21,6 @@ service.interceptors.request.use(
         req.headers["AUTHORIZE_TOKEN"] = token;
         //如果req.method给get 请求参数设置为 ?name=xxx
         if ("get".includes(req.method?.toLowerCase())) req.params = req.data;
-
         //req loading
         // @ts-ignore
         if (req.reqLoading ?? true) {
@@ -59,8 +58,9 @@ service.interceptors.response.use(
         const { code, msg } = res.data;
         const successCode = "0,200,20000";
         const noAuthCode = "401,403";
-        if (successCode.includes(code)) {
-            return res.data;
+
+        if (successCode.includes(res.status)) {
+            return res;
         } else {
             if (noAuthCode.includes(code)) {
                 ElMessageBox.confirm(langTitle("relogin_title"), {
@@ -98,6 +98,7 @@ service.interceptors.response.use(
 
 export default function request(config) {
     return service({
+        baseURL: "/",
         timeout: 8000,
         ...config,
     });

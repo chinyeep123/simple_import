@@ -44,7 +44,6 @@ import { nextTick, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useBasicStore } from '@/store/auth'
 import { elMessage, useElement } from '@/hooks/use-element'
-import { loginReq } from '@/api/auth/user'
 import { langTitle } from '@/hooks/use-common'
 
     /* listen router change and set the query  */
@@ -54,7 +53,7 @@ import { langTitle } from '@/hooks/use-common'
     const formRules = useElement().formRules
     //form
     const subForm = reactive({
-        keyword: 'panda',
+        keyword: 'admin',
         password: '123456'
     })
     const state = reactive({
@@ -97,18 +96,8 @@ import { langTitle } from '@/hooks/use-common'
     const basicStore = useBasicStore()
 
     const loginFunc = () => {
-    loginReq(subForm)
-        .then(({ data }) => {
-        elMessage(langTitle('login_success'))
-        basicStore.setToken(data?.jwtToken)
+        basicStore.setLogin(true)
         router.push('/')
-        })
-        .catch((err) => {
-        tipMessage = err?.msg
-        })
-        .finally(() => {
-        subLoading = false
-        })
     }
 
     /*

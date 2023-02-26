@@ -6,6 +6,7 @@ export const useBasicStore = defineStore("basic", {
     state: () => {
         return {
             //user info
+            isLogin: false,
             token: "",
             getUserInfo: false,
             userInfo: { username: "", avatar: "" },
@@ -28,13 +29,16 @@ export const useBasicStore = defineStore("basic", {
     },
     persist: {
         storage: localStorage,
-        paths: ["token"],
+        paths: ["token", "isLogin"],
     },
     actions: {
         toggleDevice(device) {
             this.$patch((state) => {
                 state.device = device;
             });
+        },
+        setLogin(data) {
+            this.isLogin = data;
         },
         setToken(data) {
             this.token = data;
@@ -57,6 +61,7 @@ export const useBasicStore = defineStore("basic", {
         },
         resetState() {
             this.$patch((state) => {
+                this.isLogin = false;
                 state.token = ""; //reset token
                 state.roles = [];
                 state.codes = [];

@@ -83,7 +83,7 @@ class Type extends Model
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = Str::lower(Common::replaceEmptySpace($model->name));
+            $model->slug = Common::replaceEmptySpace($model->name);
         });
     }
 
@@ -104,10 +104,5 @@ class Type extends Model
     public function brands()
     {
         return $this->hasMany(TypeBrand::class);
-    }
-
-    public function models()
-    {
-        return $this->hasManyThrough(BrandModel::class, TypeBrand::class);
     }
 }

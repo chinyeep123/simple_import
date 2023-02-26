@@ -22,7 +22,7 @@ class BrandModelsTableSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
         $brand = TypeBrand::where('slug', 'apple')->first();
         if ($brand) {
-            $models = ['Iphone SE', 'Iphone SE (2020)'];
+            $models = config('setting.seeder.brands');
             foreach ($models as $model) {
                 BrandModel::create([
                     'type_brand_id' => $brand->getKey(),

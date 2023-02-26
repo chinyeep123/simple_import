@@ -85,15 +85,23 @@ class BrandModel extends Model
         parent::boot();
 
         static::saving(function ($model) {
-            $model->slug = Str::lower(Common::replaceEmptySpace($model->name));
+            $model->slug = Common::replaceEmptySpace($model->name);
         });
     }
 
     /**
      * Get relationship belongsTo.
      */
-    public function type()
+    public function typeBrand()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(TypeBrand::class);
+    }
+
+    /**
+     * Get relationship hasMany.
+     */
+    public function capacities()
+    {
+        return $this->hasMany(ModelCapacity::class);
     }
 }

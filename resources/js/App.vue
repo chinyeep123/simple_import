@@ -22,7 +22,8 @@ const { settings } = storeToRefs(useBasicStore())
 const { size, language } = storeToRefs(useConfigStore())
 onBeforeMount(() => {
   //set tmp token when setting isNeedLogin false
-  if (!settings.value.isNeedLogin) useBasicStore().setToken(settings.value.tmpToken)
+  if (!settings.value.isNeedLogin) useBasicStore().setToken(settings.value.isLogin)
+  // if (!settings.value.isNeedLogin) useBasicStore().setToken(settings.value.tmpToken)
 })
 onMounted(() => {
   //lanch the errorLog collection

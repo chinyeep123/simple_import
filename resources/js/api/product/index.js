@@ -2,7 +2,7 @@ import request from "@/utils/request";
 
 export const listProducts = (queryParams) => {
     return request({
-        url: "/api/v1/products",
+        url: "/api/products",
         method: "get",
         params: queryParams,
     });
@@ -12,7 +12,7 @@ export const importProducts = (file) => {
     const formData = new FormData();
     formData.append("file", file);
     return request({
-        url: "/api/v1/products/import",
+        url: "/api/products/import",
         method: "post",
         data: formData,
         headers: {
@@ -23,7 +23,7 @@ export const importProducts = (file) => {
 
 export function downloadTemplate() {
     return request({
-        url: "/api/v1/products/template/download",
+        url: "/api/products/import/template/download",
         method: "get",
         responseType: "arraybuffer",
     });

@@ -25,6 +25,6 @@ Run
 Credential
 
 ```bash
-  username: panda
+  username: admin
   password: 123456
 ```

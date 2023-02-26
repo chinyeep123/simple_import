@@ -41,19 +41,20 @@ class ImportProduct implements ToCollection, WithBatchInserts, WithChunkReading,
                 })
                 ->first();
 
+            $custom_properties = $row->put('import_module', 'product');
             if ($product && in_array($status, ['sold', 'buy'])) {
                 $product->update([
                     'quantity' => $status == 'sold' ? $product->quantity - 1 : $product->quantity + 1
                 ]);
                 activity()
                     ->performedOn(new Product())
-                    ->withProperties($row)
+                    ->withProperties($custom_properties)
                     ->log("Item with Product ID " . $row['product_id'] . " import success");
             } else {
                 // log this product fail to import
                 activity()
                     ->performedOn(new Product())
-                    ->withProperties($row)
+                    ->withProperties($custom_properties)
                     ->log("Item with Product ID " . $row['product_id'] . " fail import because invalid data");
             }
         }

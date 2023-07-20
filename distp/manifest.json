@@ -8,11 +8,11 @@
     "src": "resources/js/assets/404_images/404.png"
   },
   "resources/js/app.js": {
-    "file": "static/js2/app-33156c1d.js",
+    "file": "static/js2/app-5ed018fd.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "___vendor-2ef38daa.js",
       "__@vue-e3a2634f.js",
       "__@element-plus-27eae3dd.js"
@@ -51,8 +51,8 @@
       "static/css/__vendor-8b89e2e0.css"
     ]
   },
-  "__element-plus-8e8eff9a.js": {
-    "file": "static/js1/_element-plus-8e8eff9a.js",
+  "__element-plus-56dce36e.js": {
+    "file": "static/js1/_element-plus-56dce36e.js",
     "imports": [
       "___vendor-2ef38daa.js",
       "__@vue-e3a2634f.js",
@@ -63,11 +63,11 @@
     ]
   },
   "resources/js/layout/index.vue": {
-    "file": "static/js1/index-338ae83d.js",
+    "file": "static/js1/index-d053f5ac.js",
     "src": "resources/js/layout/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "___vendor-2ef38daa.js",
       "__@vue-e3a2634f.js",
       "resources/js/app.js",
@@ -84,40 +84,40 @@
     ]
   },
   "resources/js/views/auth/Login.vue": {
-    "file": "static/js1/Login-a31054da.js",
+    "file": "static/js1/Login-51313333.js",
     "src": "resources/js/views/auth/Login.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "__@vue-e3a2634f.js",
       "___vendor-2ef38daa.js",
       "resources/js/app.js",
       "__@element-plus-27eae3dd.js"
     ],
     "css": [
-      "static/css/Login-54b76648.css"
+      "static/css/Login-6070b3b0.css"
     ]
   },
   "resources/js/views/auth/Register.vue": {
-    "file": "static/js1/Register-c0918ce1.js",
+    "file": "static/js1/Register-a89aaac8.js",
     "src": "resources/js/views/auth/Register.vue",
     "isDynamicEntry": true,
     "imports": [
       "___vendor-2ef38daa.js",
       "__@vue-e3a2634f.js",
       "resources/js/app.js",
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "__@element-plus-27eae3dd.js"
     ]
   },
   "resources/js/views/error-page/404.vue": {
-    "file": "static/js1/404-b24ba2e6.js",
+    "file": "static/js1/404-e642364d.js",
     "src": "resources/js/views/error-page/404.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
       "__@vue-e3a2634f.js",
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "___vendor-2ef38daa.js",
       "__@element-plus-27eae3dd.js"
     ],
@@ -129,11 +129,11 @@
     ]
   },
   "resources/js/views/error-page/401.vue": {
-    "file": "static/js1/401-342431fa.js",
+    "file": "static/js1/401-1a88fa16.js",
     "src": "resources/js/views/error-page/401.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "__@vue-e3a2634f.js",
       "_401-fae8089d.js",
       "resources/js/app.js",
@@ -151,11 +151,11 @@
     ]
   },
   "resources/js/views/error-page/coming-soon.vue": {
-    "file": "static/js1/coming-soon-63859e8b.js",
+    "file": "static/js1/coming-soon-d16ef7ec.js",
     "src": "resources/js/views/error-page/coming-soon.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "___vendor-2ef38daa.js",
       "_401-fae8089d.js",
       "__@element-plus-27eae3dd.js",
@@ -167,11 +167,11 @@
     ]
   },
   "resources/js/views/error-log/index.vue": {
-    "file": "static/js1/index-2964dba5.js",
+    "file": "static/js1/index-970d5dee.js",
     "src": "resources/js/views/error-log/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "___vendor-2ef38daa.js",
       "resources/js/app.js",
       "__@vue-e3a2634f.js",
@@ -179,11 +179,11 @@
     ]
   },
   "resources/js/views/error-log/error-generator.vue": {
-    "file": "static/js1/error-generator-b46903ee.js",
+    "file": "static/js1/error-generator-d04a1c54.js",
     "src": "resources/js/views/error-log/error-generator.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "resources/js/app.js",
       "__@vue-e3a2634f.js",
       "___vendor-2ef38daa.js",
@@ -191,11 +191,11 @@
     ]
   },
   "resources/js/views/Dashboard.vue": {
-    "file": "static/js1/Dashboard-7a8c5e6f.js",
+    "file": "static/js1/Dashboard-c3fa23bb.js",
     "src": "resources/js/views/Dashboard.vue",
     "isDynamicEntry": true,
     "imports": [
-      "__element-plus-8e8eff9a.js",
+      "__element-plus-56dce36e.js",
       "___vendor-2ef38daa.js",
       "resources/js/app.js",
       "__@element-plus-27eae3dd.js",
@@ -209,25 +209,25 @@
     "file": "static/css/__vendor-8b89e2e0.css",
     "src": "__vendor.css"
   },
-  "resources/js/views/error-page/coming-soon.css": {
-    "file": "static/css/coming-soon-66813f54.css",
-    "src": "resources/js/views/error-page/coming-soon.css"
-  },
   "resources/js/views/error-page/401.css": {
     "file": "static/css/401-d1792189.css",
     "src": "resources/js/views/error-page/401.css"
   },
-  "resources/js/views/auth/Login.css": {
-    "file": "static/css/Login-54b76648.css",
-    "src": "resources/js/views/auth/Login.css"
+  "resources/js/views/Dashboard.css": {
+    "file": "static/css/Dashboard-2afbbdc1.css",
+    "src": "resources/js/views/Dashboard.css"
   },
   "resources/js/views/error-page/404.css": {
     "file": "static/css/404-dd729587.css",
     "src": "resources/js/views/error-page/404.css"
   },
-  "resources/js/views/Dashboard.css": {
-    "file": "static/css/Dashboard-2afbbdc1.css",
-    "src": "resources/js/views/Dashboard.css"
+  "resources/js/views/auth/Login.css": {
+    "file": "static/css/Login-6070b3b0.css",
+    "src": "resources/js/views/auth/Login.css"
+  },
+  "resources/js/views/error-page/coming-soon.css": {
+    "file": "static/css/coming-soon-66813f54.css",
+    "src": "resources/js/views/error-page/coming-soon.css"
   },
   "resources/js/app.css": {
     "file": "static/css/app-e5acdc01.css",

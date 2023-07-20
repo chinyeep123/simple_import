@@ -35,6 +35,7 @@
       <el-button :loading="subLoading" type="primary" class="login-btn" size="default" @click.prevent="handleLogin">
         Login
       </el-button>
+      <Install />
     </el-form>
   </div>
 </template>
@@ -45,6 +46,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useBasicStore } from '@/store/auth'
 import { elMessage, useElement } from '@/hooks/use-element'
 import { langTitle } from '@/hooks/use-common'
+import Install from './Install.vue'
 
     /* listen router change and set the query  */
     const { settings } = useBasicStore()

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Type;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('{any}', function () {
     return view('welcome');
 })->where('any', '.*');
+
+// Route::get('/user', function () {
+//     return Type::where('name', 'a')->dd();
+// });
 
 Auth::routes();
 

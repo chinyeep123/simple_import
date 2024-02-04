@@ -36,6 +36,7 @@
         Login
       </el-button>
       <Install />
+      <vue-qr text="https://simple-import.comecodetogether.com" :callback="openQR" qid="testid"></vue-qr>
     </el-form>
   </div>
 </template>
@@ -46,6 +47,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useBasicStore } from '@/store/auth'
 import { elMessage, useElement } from '@/hooks/use-element'
 import { langTitle } from '@/hooks/use-common'
+import vueQr from 'vue-qr/src/packages/vue-qr.vue'
 import Install from './Install.vue'
 
     /* listen router change and set the query  */
@@ -62,6 +64,9 @@ import Install from './Install.vue'
         otherQuery: {},
         redirect: undefined
     })
+    const openQR = (dataUrl,id) => {
+      console.log('can')
+    }
     const getOtherQuery = (query) => {
         return Object.keys(query).reduce((acc, cur) => {
             if (cur !== 'redirect') {

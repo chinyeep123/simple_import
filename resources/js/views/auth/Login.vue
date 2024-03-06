@@ -17,7 +17,7 @@
       <el-form-item prop="password" :rules="formRules.isNotNull(langTitle('username_validate'))">
           <span class="svg-container">
             <svg-icon icon-class="password" />
-          </span>
+          </span>      
           <el-input
             :key="passwordType"
             ref="refPassword"

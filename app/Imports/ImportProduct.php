@@ -43,7 +43,7 @@ class ImportProduct implements OnEachRow, WithValidation, WithBatchInserts, With
             })
             ->first();
 
-        $custom_properties = $row->put('import_module', 'product');
+        $custom_properties = collect($row->toArray())->put('import_module', 'product');
         if ($product && in_array($status, ['sold', 'buy'])) {
             $product->update([
                 'quantity' => $status == 'sold' ? $product->quantity - 1 : $product->quantity + 1
